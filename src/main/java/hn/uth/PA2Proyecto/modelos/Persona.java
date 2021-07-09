@@ -20,17 +20,17 @@ public class Persona {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    //private String ident;
+    private String ident;
     private String nombre;
     private String correo;
-    /*private Date fechaNac;
-    private String sexo;
+    //private Date fechaNac;
+    //private String sexo;
     private String ocupacion;
     private String direccion;
     private String telefono;
     private String establecimientoSalud;
     private String codigoEstab;
-    private Date fechaPDosis;
-    private Date fechaSDosis;
-    private String nombreVacuna;*/
+    //private Date fechaPDosis;
+    //private Date fechaSDosis;
+    private String nombreVacuna;
 }

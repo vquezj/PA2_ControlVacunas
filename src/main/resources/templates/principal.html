@@ -10,26 +10,26 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/css/estilo.css}" >
-        
+
     </head>
     <body>
-        
+
         <div id="cabecera">
             <div id="logotipo">
                 <figure><img src="images/logo vacunas.png" width="270" height="10" alt="Logotipo"></figure>
             </div>
             <div id="titulo"><h1>Control de Vacunas COVID-19</h1></div>
         </div>
-        
+
         <ul class="menu">
             <li><a href="#">Vacunas</a></li>
             <li><a href="#">Centros de Vacunacion</a></li>
-            <li><a href="index.html">Registro Poblacional</a></li>
+            <li><a href="@/templates/index.html">Registro Poblacional</a></li>
             <li><a href="#">Calendarizacion</a></li>
             <li><a href="#">Control de Citas</a></li>
             <li><a href="#">Estadisticas</a></li>
         </ul>
-        
+
         <div class="container">
             <ul class="slider">
                 <li>
@@ -43,10 +43,10 @@ and open the template in the editor.
                 </li>      
             </ul>
         </div>
-        
-        <div class="conten" align="center">
+
+        <div class="conten" align="center" height="400px">
             <h2>Covid-19 en Honduras</h2>
-            <div class="cont1" align="center" style="width:80%;">
+            <div class="cont1" align="center" style="width:80%;" >
                 <figure><img src="images/eeuu.jpeg" width="500" height="500"></figure><br>
                 San Pedro Sula, 27 de junio. Honduras recibió este domingo en San Pedro Sula 1,5 millones 
                 de dosis de la vacuna de Moderna contra la covid-19, donadas por Estados Unidos a través 
@@ -62,9 +62,13 @@ and open the template in the editor.
                 Honduras donde serán aplicadas a la población.
             </div>
         </div>
-        
-        <p>
-            Proyecto Final <span>Jessy y Joy Team</span>
-        </p>
+
+        <div>
+            <footer>
+                <p>
+                    Derechos Reservados <span>Jessy y Joy Team</span>
+                </p>
+            </footer>
+        </div>
     </body>
 </html>

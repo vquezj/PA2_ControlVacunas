@@ -10,6 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/css/estilo.css}" >
+
     </head>
     <body>
         <div id="cabecera">
@@ -28,29 +29,50 @@ and open the template in the editor.
             <li><a href="#">Estadisticas</a></li>
         </ul>
 
-        <div align="center">
+        <div align="center" height="400px">
             <h1 align="center">Gestion de Poblacion</h1>
-            <a href="/crear" align="center">Agregar</a>
-            <h2 th:if="${lista.isEmpty()}" align="center">No hay lista de personas</h2>
+            <a href="/crear" >Agregar</a>
+            <h2 th:if="${lista.isEmpty()}" align="center">No hay registros</h2>
             <div th:if="${!lista.isEmpty()}" align="center" >
-                <h2>Lista de Personas</h2>
+                <h2>Registros</h2>
                 <table border="1">
                     <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Identidad</th>
                             <th>Nombre</th>
                             <th>Correo</th>
+                            <!--<th>Fecha Nacimiento</th>
+                            <th>Genero</th>-->
+                            <th>Ocupacion</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Establecimiento Salud</th>
+                            <th>Codigo Establecimiento</th>
+                            <th>Vacuna</th>
+                            <!--<th>Primera Dosis</th>
+                            <th>Segunda Dosis</th>-->
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="persona:${lista}">
                             <td th:text="${persona.id}"></td>
+                            <td th:text="${persona.ident}"></td>
                             <td th:text="${persona.nombre}"></td>
                             <td th:text="${persona.correo}"></td>
+                            <!--<td th:text="${persona.fechaNac}"></td>
+                            <td th:text="${persona.sexo}"></td>-->
+                            <td th:text="${persona.ocupacion}"></td>
+                            <td th:text="${persona.direccion}"></td>
+                            <td th:text="${persona.telefono}"></td>
+                            <td th:text="${persona.establecimientoSalud}"></td>
+                            <td th:text="${persona.codigoEstab}"></td>
+                            <td th:text="${persona.nombreVacuna}"></td>
+                            <!--<td th:text="${persona.fechaPDosis}"></td>
+                            <td th:text="${persona.fechaSDosis}"></td>-->
                             <td>
                                 <a th:href="@{/actualizar/{id}(id=${persona.id})}">Actualizar</a>
-                            </td>
-                            <td>
                                 <a th:href="@{/eliminar/{id}(id=${persona.id})}">Eliminar</a>
                             </td>
                         </tr>
@@ -59,9 +81,12 @@ and open the template in the editor.
             </div>
         </div>
 
-
-        <p>
-            Proyecto Final <span>Jessy y Joy Team</span>
-        </p>
+        <div>
+            <footer>
+                <p>
+                    Derechos Reservados <span>Jessy y Joy Team</span>
+                </p>
+            </footer>
+        </div>
     </body>
 </html>
