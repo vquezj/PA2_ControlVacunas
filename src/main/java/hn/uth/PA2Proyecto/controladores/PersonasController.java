@@ -26,10 +26,10 @@ public class PersonasController {
     
     private PersonasService servicio;
     
-    @RequestMapping("/")
+    /*@RequestMapping("/")
     public String principal(Model model){
         return "principal";
-    }
+    }*/
     
     @RequestMapping("/index")
     public String index(Model model){
