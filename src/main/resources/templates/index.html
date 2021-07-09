@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <title>UTH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilo.css}" >
+    </head>
+    <body>
+        <div id="cabecera">
+            <div id="logotipo">
+                <figure><img src="images/logo vacunas.png" width="270" height="10" alt="Logotipo"></figure>
+            </div>
+            <div id="titulo"><h1>Control de Vacunas COVID-19</h1></div>
+        </div>
+
+        <ul class="menu">
+            <li><a href="#">Vacunas</a></li>
+            <li><a href="#">Centros de Vacunacion</a></li>
+            <li><a href="index.html">Registro Poblacional</a></li>
+            <li><a href="#">Calendarizacion</a></li>
+            <li><a href="#">Control de Citas</a></li>
+            <li><a href="#">Estadisticas</a></li>
+        </ul>
+
+        <div align="center">
+            <h1 align="center">Gestion de Poblacion</h1>
+            <a href="/crear" align="center">Agregar</a>
+            <h2 th:if="${lista.isEmpty()}" align="center">No hay lista de personas</h2>
+            <div th:if="${!lista.isEmpty()}" align="center" >
+                <h2>Lista de Personas</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Identidad</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="persona:${lista}">
+                            <td th:text="${persona.id}"></td>
+                            <td th:text="${persona.nombre}"></td>
+                            <td th:text="${persona.correo}"></td>
+                            <td>
+                                <a th:href="@{/actualizar/{id}(id=${persona.id})}">Actualizar</a>
+                            </td>
+                            <td>
+                                <a th:href="@{/eliminar/{id}(id=${persona.id})}">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <p>
+            Proyecto Final <span>Jessy y Joy Team</span>
+        </p>
+    </body>
+</html>

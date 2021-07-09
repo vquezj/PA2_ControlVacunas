@@ -1,0 +1,113 @@
+body{
+    font-family: arial, helvetica;
+    background: #e8e8e8;
+}
+#logotipo {
+    align-content: center;
+    width:200px; 
+    float:left;
+}
+#logotipo figure{
+    align-content: center;
+    width:200px; 
+    float:left;
+}
+#logotipo img{
+    width: 100px;
+    height: 100px;
+}
+#titulo {
+    width:475px; 
+    float:right;
+}
+#cabecera {
+    height:95px;
+}
+.menu{
+    list-style: none;
+    padding: 0px;
+    background: #092327;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block;
+}
+.menu li{
+    display:inline-block;
+    text-align: center;
+}
+.menu li a:hover{
+    background: #ef8354;
+}
+#titulo h1 {
+    text-align: center;
+    margin: 10px 0 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #052a33;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: 'Cherry Swash', cursive;
+}
+p {
+    position: relative;
+    bottom: 2px;
+    width: 100%;
+    text-align: center;
+    color: #094250;
+    font-family: 'Cherry Swash',cursive;
+    font-size: 16px;
+}
+span {
+    color: #FF5733;
+}
+.container{
+    width: 100%;
+    margin: auto;
+    padding: 0px;
+    overflow: hidden;
+}
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul.slider{
+    position: relative;
+    display: flex;
+    padding: 0;
+    width: 100%;
+    height: 450px;
+    animation: cambio 20s infinite;
+}
+ul.slider li{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+ul.slider li img{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.cont1{
+    display: flex;
+    align-items: center;
+}
+
+@keyframes cambio{
+    0% { margin-left: 0; }
+    30% { margin-left: 0; }
+
+    35% { margin-left: -100%; }
+    65% { margin-left: -100%; }
+
+    70% { margin-left: -200%; }
+    100% { margin-left: -200%; }
+}
+

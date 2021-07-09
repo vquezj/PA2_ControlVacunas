@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <title>UTH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilo.css}" >
+    </head>
+    <body>
+        <div id="cabecera">
+            <div id="logotipo">
+                <figure><img src="images/logo vacunas.png" width="270" height="10" alt="Logotipo"></figure>
+            </div>
+            <div id="titulo"><h1>Control de Vacunas COVID-19</h1></div>
+        </div>
+
+        <ul class="menu">
+            <li><a href="#">Vacunas</a></li>
+            <li><a href="#">Centros de Vacunacion</a></li>
+            <li><a href="index.html">Registro Poblacional</a></li>
+            <li><a href="#">Calendarizacion</a></li>
+            <li><a href="#">Control de Citas</a></li>
+            <li><a href="#">Estadisticas</a></li>
+        </ul>
+
+        <div class="content" align="center">
+            <div class="cont" align="center">
+                <h2>Registrando Poblacion</h2>
+            </div>
+            <p align="center">Rellene la siguiente informacion del formulario para agregar un nuevo registro</p><br><br>
+            <form action="#" method="POST" th:action="@{/guardarFormulario}" th:object="${persona}">
+                <div align="center">
+                    <label>Ingrese El Id:</label>
+                    <input type="text" id="id" name="id" th:field="*{id}"><br><br>
+              
+                    <label>Ingrese El Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" th:field="*{nombre}"><br><br>
+                
+                    <label>Ingrese Un Correo Electronico:</label>
+                    <input type="text" id="correo" name="correo" th:field="*{correo}"><br><br>
+                </div>
+                <!--<Fecha de Nacimiento:<input type="date" id="fechaNac" name="fechaNac" th:field="*{fechaNac}"><br>
+                Sexo:<input type="select" id="sexo" name="sexo" th:field="*{sexo}"><option value="masculino">Masculino</option><option value="femenino">Femenino</option><br>
+                Ocupacion:<input type="text" id="ocupacion" name="ocupacion" th:field="*{ocupacion}"><br>
+                Direccion:<input type="text" id="direccion" name="direccion" th:field="*{direccion}"><br>
+                Telefono:<input type="text" id="telefono" name="telefono" th:field="*{telefono}"><br>
+                Establecimiento de Salud:<input type="text" id="establecimientoSalud" name="establecimientoSalud" th:field="*{establecimientoSalud}"><br>
+                Codigo de Establecimiento:<input type="text" id="codigoEstab" name="codigoEstab" th:field="*{codigoEstab}"><br>
+                Fecha Primera Dosis:<input type="date" id="start" name="trip-start" value="2018-07-22" th:field="*{fechaPDosis}"><br>
+                Fecha Segunda Dosis:<input type="date" id="start" name="trip-start" value="2018-07-22" th:field="*{fechaSDosis}"><br>
+                Nombre Vacuna<input type="text" id="nombreVacuna" name="nombreVacuna" th:field="*{nombreVacuna}"><br>-->
+                <br><br><button type="submit">Guardar Persona</button>
+            </form>
+        </div>
+        <p>
+            Proyecto Final <span>Jessy y Joy Team</span>
+        </p>
+    </body>
+</html>
