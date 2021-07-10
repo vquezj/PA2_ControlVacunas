@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <title>UTH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilo.css}" >
+
+    </head>
+    <body>
+        <div id="cabecera">
+            <div id="logotipo">
+                <figure><img src="images/logo vacunas.png" width="270" height="10" alt="Logotipo"></figure>
+            </div>
+            <div id="titulo"><h1>Control de Vacunas COVID-19</h1></div>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="#">Centros de Vacunacion</a></li>
+            <li><a href="/abrirIndex">Registro Poblacional</a></li>
+            <li><a href="#">Calendarizacion</a></li>
+            <li><a href="#">Control de Citas</a></li>
+            <li><a href="#">Estadisticas</a></li>
+        </ul>
+
+        <div align="center" height="400px">
+            <h1 align="center">Gestion de Vacunas</h1>
+            <a href="/crearRV" >Agregar</a>
+            <h2 th:if="${listaV.isEmpty()}" align="center">No hay registros</h2>
+            <div th:if="${!listaV.isEmpty()}" align="center" >
+                <h2>Registros</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre Vacuna</th>
+                            <th>Cantidad</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="vacuna{listaV}">
+                            <td th:text="${vacuna.idV}"></td>
+                            <td th:text="${vacuna.nombreVacuna}"></td>
+                            <td th:text="${vacuna.cant}"></td>
+                            <td>
+                                <a th:href="@{/actualizarRV/{idV}(idV=${vacuna.idV})}">Actualizar</a>
+                                <a th:href="@{/eliminarRV/{idV}(idV=${vacuna.idV})}">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <footer>
+                <p>
+                    Derechos Reservados <span>Jessy y Joy Team</span>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
+

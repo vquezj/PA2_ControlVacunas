@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <title>UTH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilo.css}" >
+        <link rel="stylesheet" th:href="@{/css/estilo_form.css}" >
+    </head>
+    <body>
+        <div id="cabecera">
+            <div id="logotipo">
+                <figure><img src="images/logo vacunas.png" width="270" height="10" alt="Logotipo"></figure>
+            </div>
+            <div id="titulo"><h1>Control de Vacunas COVID-19</h1></div>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="#">Centros de Vacunacion</a></li>
+            <li><a href="/abrirIndex">Registro Poblacional</a></li>
+            <li><a href="#">Calendarizacion</a></li>
+            <li><a href="#">Control de Citas</a></li>
+            <li><a href="#">Estadisticas</a></li>
+        </ul>
+
+        <div class="content" align="center" height="400px">
+            <div class="cont" align="center">
+                <h2>Registrando Vacuna</h2>
+            </div>
+            <p align="center">Rellene la siguiente informacion del formulario para agregar un nuevo registro</p><br>
+            <form action="#" method="POST" th:action="@{/guardarRV}" th:object="${vacuna}">
+                <div>
+                    <label>Ingrese El Nombre De La Vacuna:</label>
+                    <input type="text" id="nombreVacuna" name="nombreVacuna" th:field="*{nombreVacuna}"><br><br>
+
+                    <label>Ingrese La Cantidad:</label>
+                    <input type="text" id="cant" name="cant" th:field="*{cant}"><br><br>
+
+                </div>
+
+                <br><br><button type="submit">Guardar Registro</button>
+                <button type="reset">Cancelar</button>
+            </form>
+        </div>
+
+        <div >
+            <footer>
+                <p>
+                    Derechos Reservados <span>Jessy y Joy Team</span>
+                </p>
+            </footer>
+        </div>
+
+
+    </body>
+
+</html>
+
