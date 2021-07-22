@@ -23,15 +23,15 @@ and open the template in the editor.
         <ul class="menu">
             <li><a href="/">Inicio</a></li>
             <li><a href="/abrirVacuna">Vacunas</a></li>
-            <li><a href="/abrirEstablecimiento">Centros de Vacunacion</a></li>
+            <li><a href="/abrirIndex">Registro Poblacional</a></li>
             <li><a href="/abrirCalendarizacion">Calendarizacion</a></li>
             <li><a href="/abrirCitas">Control de Citas</a></li>
             <li><a href="/abrirEstadisticas">Estadisticas</a></li>
         </ul>
 
         <div align="center" height="400px">
-            <h1 align="center">Gestion de Poblacion</h1>
-            <a href="/crear" >Agregar</a>
+            <h1 align="center">Gestion de Establecimientos</h1>
+            <a href="/crearEstablecimiento" >Agregar</a>
             <h2 th:if="${lista.isEmpty()}" align="center">No hay registros</h2>
             <div th:if="${!lista.isEmpty()}" align="center" >
                 <h2>Registros</h2>
@@ -39,37 +39,20 @@ and open the template in the editor.
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Identidad</th>
-                            <th>Nombre</th>
-                            <th>Fecha Nacimiento</th>
-                            <th>Genero</th>
-                            <th>Ocupacion</th>
-                            <th>Direccion</th>
-                            <th>Telefono</th>
-                            <th>Establecimiento de Salud</th>
-                            <th>Vacuna</th>
-                            <th>Primera Dosis</th>
-                            <th>Segunda Dosis</th>
-                            <th>Accion</th>
+                            <th>Nombre Establecimiento</th>
+                            <th>Codigo de Establecimiento</th>
+                            <th>Departamento</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="persona:${lista}">
-                            <td th:text="${persona.id}"></td>
-                            <td th:text="${persona.ident}"></td>
-                            <td th:text="${persona.nombre}"></td>
-                            <td th:text="${persona.fechaNac}"></td>
-                            <td th:text="${persona.sexo}"></td>
-                            <td th:text="${persona.ocupacion}"></td>
-                            <td th:text="${persona.direccion}"></td>
-                            <td th:text="${persona.telefono}"></td>
-                            <td th:text="${persona.establecimientoSalud}"></td>
-                            <td th:text="${persona.nombreVacuna}"></td>
-                            <td th:text="${persona.primeraDosis}"></td>
-                            <td th:text="${persona.segundaDosis}"></td>
+                        <tr th:each="establecimiento{lista}">
+                            <td th:text="${establecimiento.id}"></td>
+                            <td th:text="${establecimiento.nombreEstablecimiento}"></td>
+                            <td th:text="${establecimiento.codigoEst}"></td>
+                            <td th:text="${establecimiento.depto}"></td>
                             <td>
-                                <a th:href="@{/actualizar/{id}(id=${persona.id})}"><img src="images/actualizar.png" alt=""></a>
-                                <a th:href="@{/eliminar/{id}(id=${persona.id})}"><img src="images/eliminar.png" alt=""></a>
+                                <a th:href="@{/actualizarEstablecimiento/{id}(id=${establecimiento.id})}"><img src="images/actualizar.png" alt=""></a>
+                                <a th:href="@{/eliminarEstablecimiento/{id}(id=${establecimiento.id})}"><img src="images/eliminar.png" alt=""></a>
                             </td>
                         </tr>
                     </tbody>
@@ -86,3 +69,4 @@ and open the template in the editor.
         </div>
     </body>
 </html>
+

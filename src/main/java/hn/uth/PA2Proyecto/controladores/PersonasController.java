@@ -6,7 +6,9 @@
 package hn.uth.PA2Proyecto.controladores;
 
 import hn.uth.PA2Proyecto.modelos.Persona;
+import hn.uth.PA2Proyecto.servicios.EstablecimientoService;
 import hn.uth.PA2Proyecto.servicios.PersonasService;
+import hn.uth.PA2Proyecto.servicios.VacunaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  *
@@ -25,11 +26,8 @@ public class PersonasController {
     @Autowired
     
     private PersonasService servicio;
-    
-    /*@RequestMapping("/")
-    public String principal(Model model){
-        return "principal";
-    }*/
+    private VacunaService servVacuna;
+    private EstablecimientoService servEstablecimiento;
     
     @RequestMapping("/index")
     public String index(Model model){
@@ -40,6 +38,8 @@ public class PersonasController {
     @GetMapping("/crear")
     public String abrirFormularioCrearPersona(Model model){
         model.addAttribute("persona", new Persona());
+        model.addAttribute("vacuna", servVacuna.getLista());
+        model.addAttribute("establecimiento", servEstablecimiento.getLista());
         return "personaFormulario";
     }
     

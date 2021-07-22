@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <title>UTH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilo.css}" >
+        <link rel="stylesheet" th:href="@{/css/estilo_form.css}" >
+    </head>
+    <body>
+        <div id="cabecera">
+            <div id="logotipo">
+                <figure><img src="images/logo vacunas.png" width="270" height="10" alt="Logotipo"></figure>
+            </div>
+            <div id="titulo"><h1>Control de Vacunas COVID-19</h1></div>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/abrirVacuna">Vacunas</a></li>
+            <li><a href="/abrirEstablecimiento">Centros de Vacunacion</a></li>
+            <li><a href="/abrirCalendarizacion">Calendarizacion</a></li>
+            <li><a href="/abrirCitas">Registro Poblacional</a></li>
+            <li><a href="/abrirEstadisticas">Estadisticas</a></li>
+        </ul>
+
+        <div class="content" align="center" height="400px">
+            <div class="cont" align="center">
+                <h2>Registrando Poblacion</h2>
+            </div>
+            <p align="center">Rellene la siguiente informacion del formulario para agregar un nuevo registro</p><br>
+            <form action="demo_form.asp" method="POST" th:action="@{/guardarC}" th:object="${citas}">
+                <div>
+                    <label>Nombre:</label>
+                    <select id="persona" name="persona" th:field="*{persona}">
+                        <option th:each="persona{persona}"
+                            th:value="${persona.id}"
+                            th:text="${persona.nombre}" />
+                    </select><br><br>
+                </div>
+
+                <div>
+                    <label>Dosis:</label>
+                    <input type="text" id="dosis" name="dosis" th:field="*{dosis}"><br><br>
+                </div>
+
+                <div>
+                    <label>Vacuna:</label>
+                    <select id="vacuna" name="vacuna" th:field="*{vacuna}">
+                        <option th:each="vacuna{vacuna}"
+                            th:value="${vacuna.id}"
+                            th:text="${vacuna.nombreVacuna}" />
+                    </select><br><br>
+                </div>-->
+
+                <div>
+                    <label>Establecimiento de Salud:</label>
+                    <select id="establecimiento" name="establecimiento" th:field="*{establecimiento}">
+                        <option th:each="establecimiento:${listaEstab}"
+                            th:value="${establecimiento.codEstablecimiento}"
+                            th:text="${establecimiento.nombreEstablecimiento}" />
+                    </select><br><br>
+                </div>
+
+                <div>
+                    <label>Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" th:field="*{fecha}"><br><br>
+                </div>
+
+                <br><br><button type="submit">Guardar Registro</button>
+                <button type="reset">Cancelar</button>
+            </form>
+        </div>
+
+        <div >
+            <footer>
+                <p>
+                    Derechos Reservados <span>Jessy y Joy Team</span>
+                </p>
+            </footer>
+        </div>
+
+
+    </body>
+
+</html>

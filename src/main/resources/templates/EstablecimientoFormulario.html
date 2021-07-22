@@ -22,7 +22,7 @@ and open the template in the editor.
 
         <ul class="menu">
             <li><a href="/">Inicio</a></li>
-            <li><a href="/abrirEstablecimiento">Centros de Vacunacion</a></li>
+            <li><a href="/abrirVacuna">Vacunas</a></li>
             <li><a href="/abrirIndex">Registro Poblacional</a></li>
             <li><a href="/abrirCalendarizacion">Calendarizacion</a></li>
             <li><a href="/abrirCitas">Control de Citas</a></li>
@@ -31,20 +31,22 @@ and open the template in the editor.
 
         <div class="content" align="center" height="400px">
             <div class="cont" align="center">
-                <h2>Registrando Vacuna</h2>
+                <h2>Registrando Centro de Vacunacion</h2>
             </div>
             <p align="center">Rellene la siguiente informacion del formulario para agregar un nuevo registro</p><br>
-            <form method="POST" th:action="@{/guardarVacuna}" th:object="${vacuna}">
+            <form action="#" method="POST" th:action="@{/guardarEstablecimiento}" th:object="${establecimiento}">
                 <div>
-                    
                     <label>Id:</label>
                     <input disabled  type="text" id="id" name="id" th:field="*{id}"><br><br>
                     
-                    <label>Ingrese El Nombre De La Vacuna:</label>
-                    <input type="text" id="nombreVacuna" name="nombreVacuna" th:field="*{nombreVacuna}"><br><br>
+                    <label>Ingrese El Nombre Del Establecimiento De Salud:</label>
+                    <input type="text" id="nombreEstablecimiento" name="nombreEstablecimiento" th:field="*{nombreEstablecimiento}"><br><br>
 
-                    <label>Ingrese La Cantidad:</label>
-                    <input type="text" id="cant" name="cant" th:field="*{cant}"><br><br>
+                    <label>Ingrese El Codigo Del Establecimiento De Salud:</label>
+                    <input type="text" id="codigoEst" name="codigoEst" th:field="*{codigoEst}"><br><br>
+                    
+                    <label>Seleccione El Departamento Del Establecimiento:</label>
+                    <input type="text" id="depto" name="depto" th:field="*{depto}"><br><br>
 
                 </div>
 

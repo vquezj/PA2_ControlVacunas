@@ -23,35 +23,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class VacunaController {
     @Autowired
     
-    private VacunaService servicioV;
+    private VacunaService sVacuna;
     
     @RequestMapping("/vacuna")
     public String vacuna(Model model){
-        model.addAttribute("listaV", servicioV.getListaV());
+        model.addAttribute("lista", sVacuna.getLista());
         return "/vacuna";
     }
     
-    @GetMapping("/crearRV")
+    @GetMapping("/crearV")
     public String abrirFormularioCrearVacuna(Model model){
         model.addAttribute("vacuna", new Vacuna());
         return "vacunaFormulario";
     }
     
-    @GetMapping("/actualizarRV/{idV}")
-    public String abrirFormularioActualizarVacuna(@PathVariable Long idV, Model model){
-        model.addAttribute("vacuna", servicioV.getEntidadV(idV));
+    @GetMapping("/actualizarV/{id}")
+    public String abrirFormularioActualizarVacuna(@PathVariable Long id, Model model){
+        model.addAttribute("vacuna", sVacuna.getEntidad(id));
         return "vacunaFormulario";
     }
     
-    @PostMapping("/guardarRV")
+    @PostMapping("/guardarVacuna")
     public String guardarFormularioVacuna(Vacuna vacuna, Model model){
-        servicioV.guardarV(vacuna);
-        return "redirect:/vacuna";
+        sVacuna.guardar(vacuna);
+        return "/vacuna";
     }
     
-    @GetMapping("/eliminarRV/{idV}")
-    public String eliminarRV(@PathVariable Long idV, Model model){
-        servicioV.eliminarV(idV);
-        return "redirect:/vacuna";
+    @GetMapping("/eliminarV/{id}")
+    public String eliminarRV(@PathVariable Long id, Model model){
+        sVacuna.eliminar(id);
+        return "/vacuna";
     }
 }

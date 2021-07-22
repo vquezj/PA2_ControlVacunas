@@ -5,8 +5,8 @@
  */
 package hn.uth.PA2Proyecto.servicios;
 
-import hn.uth.PA2Proyecto.modelos.Vacuna;
-import hn.uth.PA2Proyecto.repositorios.VacunaRepositorio;
+import hn.uth.PA2Proyecto.modelos.Citas;
+import hn.uth.PA2Proyecto.repositorios.CitasRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +17,26 @@ import org.springframework.stereotype.Service;
  * @author 50497
  */
 @Service
-public class VacunaService {
+public class CitasService {
     @Autowired
-    private VacunaRepositorio repoVacuna;
     
-    public void guardar(Vacuna vacuna){
-        repoVacuna.save(vacuna);
+    private CitasRepositorio repositorioC;
+    
+    public void guardar(Citas citas){
+        repositorioC.save(citas);
     }
     
     public void eliminar(Long id){
-        repoVacuna.deleteById(id);    
+        repositorioC.deleteById(id);    
     }
     
-    public Optional<Vacuna> getEntidad(Long id){
-        return repoVacuna.findById(id);
+    public Optional<Citas> getEntidad(Long id){
+        return repositorioC.findById(id);
     }
     
-    public List<Vacuna> getLista(){
-        return (List<Vacuna>) repoVacuna.findAll();
+    public List<Citas> getLista(){
+        return (List<Citas>) repositorioC.findAll();
     }
+    
+   
 }

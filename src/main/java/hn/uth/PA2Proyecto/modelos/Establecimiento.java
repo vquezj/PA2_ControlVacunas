@@ -20,12 +20,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-
-public class Vacuna {
+public class Establecimiento {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String cant;
-    private String nombreVacuna;
-
+    private String nombreEstablecimiento;
+    private String codigoEst;
+    private String depto;
 }

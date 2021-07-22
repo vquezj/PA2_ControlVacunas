@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package hn.uth.PA2Proyecto.modelos;
 
 import java.time.LocalDate;
@@ -7,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 /**
  *
  * @author 50497
@@ -14,20 +20,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-
-public class Persona {
+public class Citas {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String ident;
-    private String nombre;
-    private LocalDate fechaNac;
-    private String genero;
-    private String ocupacion;
-    private String direccion;
-    private String telefono;
-    private String establecimientoSalud;
-    private LocalDate primeraDosis;
-    private LocalDate segundaDosis;
-    private String nombreVacuna;
+    private String dosis;
+    private String persona;
+    private String vacuna;
+    private String establecimiento;
+    private LocalDate fecha;
 }

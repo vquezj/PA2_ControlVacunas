@@ -24,13 +24,13 @@ and open the template in the editor.
             <li><a href="/">Inicio</a></li>
             <li><a href="/abrirVacuna">Vacunas</a></li>
             <li><a href="/abrirEstablecimiento">Centros de Vacunacion</a></li>
+            <li><a href="/abrirIndex">Registro Poblacional</a></li>
             <li><a href="/abrirCalendarizacion">Calendarizacion</a></li>
             <li><a href="/abrirCitas">Control de Citas</a></li>
-            <li><a href="/estadisticas">Estadisticas</a></li>
         </ul>
 
         <div class="content" align="center" height="400px">
-            <div class="cont" align="center">
+           <!-- <div class="cont" align="center">
                 <h2>Registrando Poblacion</h2>
             </div>
             <p align="center">Rellene la siguiente informacion del formulario para agregar un nuevo registro</p><br>
@@ -42,13 +42,19 @@ and open the template in the editor.
                     <label>Ingrese El Nombre Completo:</label>
                     <input type="text" id="nombre" name="nombre" th:field="*{nombre}"><br><br>
 
-                    <label>Ingrese La Fecha De Nacimiento:</label>
+                    <label>Ingrese Un Correo Electronico:</label>
+                    <input type="text" id="correo" name="correo" th:field="*{correo}"><br><br>
+
+                    <!--<label>Ingrese La Fecha De Nacimiento:</label>
                     <input type="date" id="fechaNac" name="fechaNac" th:field="*{fechaNac}"><br><br>
                     
-                    <label>Ingrese el Genero:</label>
-                    <input type="text" id="genero" name="genero" th:field="*{genero}"><br><br>-->
+                    <label>Seleccione Genero:</label>
+                    <select id="sexo" name="sexo" th:field="*{sexo}">
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                    </select><br><br>-->
 
-                    <label>Ingrese Una Ocupacion:</label>
+                    <!--<label>Ingrese Una Ocupacion:</label>
                     <input type="text" id="ocupacion" name="ocupacion" th:field="*{ocupacion}"><br><br>
 
                     <label>Ingrese Una Direccion:</label>
@@ -58,25 +64,24 @@ and open the template in the editor.
                     <input type="text" id="telefono" name="telefono" th:field="*{telefono}"><br><br>
 
                     <label>Ingrese Un Establecimiento De Salud:</label>
-                    <select id="establecimientoSalud" name="establecimientoSalud" th:field="*{establecimientoSalud}">
-                        <option th:each="establecimientoSalud:${lista}"
-                            th:text="${establecimientoSalud.nombreEstablecimiento}" />
-                    </select><br><br>
+                    <input type="text" id="establecimientoSalud" name="establecimientoSalud" th:field="*{establecimientoSalud}"><br><br>
 
-                    <label>Vacuna Aplicada:</label>
-                    <select id="nombreVacuna" name="nombreVacuna" th:field="*{nombreVacuna}">
-                        <option th:each="nombreVacuna{lista}"
-                            th:text="${nombreVacuna.nombreVacuna}" />
-                    </select><br><br>
+                    <label>Ingrese El Codigo Del Establecimiento:</label>
+                    <input type="text" id="codigoEstab" name="codigoEstab" th:field="*{codigoEstab}"><br><br>
+
+                    <label>Ingrese Nombre De Vacuna Aplicada:</label>
+                    <input type="text" id="nombreVacuna" name="nombreVacuna" th:field="*{nombreVacuna}"><br><br>
+
+                    <!--<label>Ingrese La Fecha De Primera Dosis</label>
+                    <input type="date" id="fechaPDosis" name="fechaPDosis" th:field="*{fechaPDsosis}"><br><br>
                     
-                    <label>Ingrese La Fecha De Primera Dosis</label>
-                    <input type="date" id="primeraDosis" name="primeraDosis" th:field="*{primeraDosis}"><br><br>
-
-                </div>
+                    <label>Ingrese La Fecha De Segunda Dosis:</label>
+                    <input type="date" id="fechaSDosis" name="fechaSDosis" th:field="*{fechaSDosis}"><br><br>-->
+                <!--</div>
 
                 <br><br><button type="submit">Guardar Registro</button>
                 <button type="reset">Cancelar</button>
-            </form>
+            </form>-->
         </div>
 
         <div >

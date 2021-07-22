@@ -10,7 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/css/estilo.css}" >
-        <link rel="stylesheet" th:href="@{/css/estilo_form.css}" >
+        <link rel="stylesheet" th:href="@{/css/estiloCalendarizacion.css}" >
+
     </head>
     <body>
         <div id="cabecera">
@@ -22,47 +23,46 @@ and open the template in the editor.
 
         <ul class="menu">
             <li><a href="/">Inicio</a></li>
+            <li><a href="/abrirVacuna">Vacunas</a></li>
             <li><a href="/abrirEstablecimiento">Centros de Vacunacion</a></li>
             <li><a href="/abrirIndex">Registro Poblacional</a></li>
-            <li><a href="/abrirCalendarizacion">Calendarizacion</a></li>
             <li><a href="/abrirCitas">Control de Citas</a></li>
             <li><a href="/abrirEstadisticas">Estadisticas</a></li>
         </ul>
 
-        <div class="content" align="center" height="400px">
-            <div class="cont" align="center">
-                <h2>Registrando Vacuna</h2>
+        <div align="center" height="400px">
+
+            <div class="container2">
+                <ul class="slider2">
+                    <li>
+                        <img  src="images/inf21.jpg" alt="" width="560" height="650"/>
+                    </li>
+                    <li>
+                        <img  src="images/inf2.jpg" alt="" width="560" height="650"/>
+                    </li>     
+                </ul>
+            </div>  
+            
+            <div class="container3">
+                <h4>¿DONDE ENCONTRAR ASISTENCIA MEDICA LOCAL?</h4>
+                <ul class="slider3">
+                    <li>
+                        <image src="images/map1.jpg" alt="" width="650" height="560"/>
+                    </li>
+                    <li>
+                        <image src="images/map2.jpg" alt="" width="650" height="560"/>
+                    </li>
+                </ul>
+                
             </div>
-            <p align="center">Rellene la siguiente informacion del formulario para agregar un nuevo registro</p><br>
-            <form method="POST" th:action="@{/guardarVacuna}" th:object="${vacuna}">
-                <div>
-                    
-                    <label>Id:</label>
-                    <input disabled  type="text" id="id" name="id" th:field="*{id}"><br><br>
-                    
-                    <label>Ingrese El Nombre De La Vacuna:</label>
-                    <input type="text" id="nombreVacuna" name="nombreVacuna" th:field="*{nombreVacuna}"><br><br>
-
-                    <label>Ingrese La Cantidad:</label>
-                    <input type="text" id="cant" name="cant" th:field="*{cant}"><br><br>
-
-                </div>
-
-                <br><br><button type="submit">Guardar Registro</button>
-                <button type="reset">Cancelar</button>
-            </form>
+            
         </div>
-
-        <div >
+        <div>
             <footer>
                 <p>
                     Derechos Reservados <span>Jessy y Joy Team</span>
                 </p>
             </footer>
         </div>
-
-
     </body>
-
 </html>
-

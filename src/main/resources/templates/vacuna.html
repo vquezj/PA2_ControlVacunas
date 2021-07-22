@@ -22,18 +22,18 @@ and open the template in the editor.
 
         <ul class="menu">
             <li><a href="/">Inicio</a></li>
-            <li><a href="#">Centros de Vacunacion</a></li>
+            <li><a href="/abrirEstablecimiento">Centros de Vacunacion</a></li>
             <li><a href="/abrirIndex">Registro Poblacional</a></li>
-            <li><a href="#">Calendarizacion</a></li>
-            <li><a href="#">Control de Citas</a></li>
-            <li><a href="#">Estadisticas</a></li>
+            <li><a href="/abrirCalendarizacion">Calendarizacion</a></li>
+            <li><a href="/abrirCitas">Control de Citas</a></li>
+            <li><a href="/abrirEstadisticas">Estadisticas</a></li>
         </ul>
 
         <div align="center" height="400px">
             <h1 align="center">Gestion de Vacunas</h1>
-            <a href="/crearRV" >Agregar</a>
-            <h2 th:if="${listaV.isEmpty()}" align="center">No hay registros</h2>
-            <div th:if="${!listaV.isEmpty()}" align="center" >
+            <a href="/crearV" >Agregar</a>
+            <h2 th:if="${lista.isEmpty()}" align="center">No hay registros</h2>
+            <div th:if="${!lista.isEmpty()}" align="center" >
                 <h2>Registros</h2>
                 <table border="1">
                     <thead>
@@ -45,13 +45,13 @@ and open the template in the editor.
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="vacuna{listaV}">
-                            <td th:text="${vacuna.idV}"></td>
+                        <tr th:each="vacuna{lista}">
+                            <td th:text="${vacuna.id}"></td>
                             <td th:text="${vacuna.nombreVacuna}"></td>
                             <td th:text="${vacuna.cant}"></td>
                             <td>
-                                <a th:href="@{/actualizarRV/{idV}(idV=${vacuna.idV})}">Actualizar</a>
-                                <a th:href="@{/eliminarRV/{idV}(idV=${vacuna.idV})}">Eliminar</a>
+                                <a th:href="@{/actualizarV/{idV}(id=${vacuna.id})}"><img src="images/actualizar.png" alt=""></a>
+                                <a th:href="@{/eliminarV/{idV}(id=${vacuna.id})}"><img src="images/eliminar.png" alt=""></a>
                             </td>
                         </tr>
                     </tbody>

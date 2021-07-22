@@ -32,4 +32,24 @@ public class MenuController {
     public String abrirVacuna(){
         return "redirect:vacuna";
     }
+    
+    @RequestMapping("/abrirEstablecimiento")
+    public String abrirEstablecimiento(){
+        return "redirect:establecimiento";
+    }
+    
+    @RequestMapping("/abrirCalendarizacion")
+    public String abrirCalendarizacion(){
+        return "redirect:calendarizacion";
+    }
+    
+    @RequestMapping("/abrirCitas")
+    public String abrirCitas(){
+        return "redirect:citas";
+    }
+    
+    @RequestMapping("/abrirEstadisticas")
+    public String abrirEstadisticas(){
+        return "redirect:estadisticas";
+    }
 }
