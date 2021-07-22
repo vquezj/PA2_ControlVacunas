@@ -5,7 +5,9 @@
  */
 package hn.uth.PA2Proyecto.controladores;
 
+import hn.uth.PA2Proyecto.modelos.Departamento;
 import hn.uth.PA2Proyecto.modelos.Establecimiento;
+import hn.uth.PA2Proyecto.servicios.DepartamentoService;
 import hn.uth.PA2Proyecto.servicios.EstablecimientoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class EstablecimientoController {
 
     @Autowired
     private EstablecimientoService sEstablecimiento;
+    
+    @Autowired
+    private DepartamentoService servDepto;
 
     @RequestMapping("/establecimiento")
     public String establecimiento(Model model) {
@@ -35,7 +40,12 @@ public class EstablecimientoController {
 
     @GetMapping("/crearEstablecimiento")
     public String abrirFormularioCrearEstablecimiento(Model model) {
+        
+        List<Departamento> listaDepto = servDepto.getLista();
+        
         model.addAttribute("establecimiento", new Establecimiento());
+        model.addAttribute("departamento", listaDepto);
+        
         return "establecimientoFormulario";
     }
 

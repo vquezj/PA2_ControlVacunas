@@ -22,6 +22,7 @@ public class Persona {
     private String ident;
     private String nombre;
     private String fechaNac;
+    private String genero;
     private String ocupacion;
     private String direccion;
     private String telefono;

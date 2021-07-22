@@ -44,6 +44,14 @@ and open the template in the editor.
 
                     <label>Ingrese El Codigo Del Establecimiento De Salud:</label>
                     <input type="text" id="codigoEst" name="codigoEst" th:field="*{codigoEst}"><br><br>
+                    
+                    <label>Seleccione El Departamento:</label>
+                    <select id="depto" name="depto" th:field="*{depto}">
+                        <option th:each="departamento:${departamento}"
+                                th:value="${departamento.id}"
+                                th:text="${departamento.depto}"
+                            /> 
+                    </select><br><br>
 
                 </div>
 

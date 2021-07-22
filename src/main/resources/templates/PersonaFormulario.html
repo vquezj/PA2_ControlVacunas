@@ -47,6 +47,14 @@ and open the template in the editor.
 
                     <label>Ingrese La Fecha De Nacimiento:</label>
                     <input type="tex" id="fechaNac" name="fechaNac" th:field="*{fechaNac}"><br><br>
+                    
+                    <label>Seleccione El Genero:</label>
+                    <select id="genero" name="genero" th:field="*{genero}">
+                        <option th:each="genero:${genero}"
+                                th:value="${genero.id}"
+                                th:text="${genero.genero}"
+                            /> 
+                    </select><br><br>
 
                     <label>Ingrese Una Ocupacion:</label>
                     <input type="text" id="ocupacion" name="ocupacion" th:field="*{ocupacion}"><br><br>

@@ -16,16 +16,12 @@ import lombok.NoArgsConstructor;
  *
  * @author 50497
  */
-
 @Data
 @NoArgsConstructor
 @Entity
-public class Establecimiento {
+public class Departamento {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String nombreEstablecimiento;
-    private String codigoEst;
     private String depto;
-
 }

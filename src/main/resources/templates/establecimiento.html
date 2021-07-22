@@ -39,8 +39,9 @@ and open the template in the editor.
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Nombre Establecimiento</th>
+                            <th>Nombre del Establecimiento</th>
                             <th>Codigo de Establecimiento</th>
+                            <th>Departamento</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,6 +49,7 @@ and open the template in the editor.
                             <td th:text="${establecimiento.id}"></td>
                             <td th:text="${establecimiento.nombreEstablecimiento}"></td>
                             <td th:text="${establecimiento.codigoEst}"></td>
+                            <td th:text="${establecimiento.depto}"></td>
                             <td>
                                 <a th:href="@{/actualizarEstablecimiento/{id}(id=${establecimiento.id})}"><img src="images/actualizar.png" alt=""></a>
                                 <a th:href="@{/eliminarEstablecimiento/{id}(id=${establecimiento.id})}"><img src="images/eliminar.png" alt=""></a>
