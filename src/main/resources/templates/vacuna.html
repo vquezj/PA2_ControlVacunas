@@ -32,8 +32,8 @@ and open the template in the editor.
         <div align="center" height="400px">
             <h1 align="center">Gestion de Vacunas</h1>
             <a href="/crearV" >Agregar</a>
-            <h2 th:if="${lista.isEmpty()}" align="center">No hay registros</h2>
-            <div th:if="${!lista.isEmpty()}" align="center" >
+            <h2 th:if="${listaV.isEmpty()}" align="center">No hay registros</h2>
+            <div th:if="${!listaV.isEmpty()}" align="center"  >
                 <h2>Registros</h2>
                 <table border="1">
                     <thead>
@@ -45,13 +45,13 @@ and open the template in the editor.
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="vacuna{lista}">
+                        <tr th:each="vacuna:${listaV}">
                             <td th:text="${vacuna.id}"></td>
                             <td th:text="${vacuna.nombreVacuna}"></td>
                             <td th:text="${vacuna.cant}"></td>
                             <td>
-                                <a th:href="@{/actualizarV/{idV}(id=${vacuna.id})}"><img src="images/actualizar.png" alt=""></a>
-                                <a th:href="@{/eliminarV/{idV}(id=${vacuna.id})}"><img src="images/eliminar.png" alt=""></a>
+                                <a th:href="@{/actualizarV/{id}(id=${vacuna.id})}"><img src="images/actualizar.png" alt=""></a>
+                                <a th:href="@{/eliminarV/{id}(id=${vacuna.id})}"><img src="images/eliminar.png" alt=""></a>
                             </td>
                         </tr>
                     </tbody>

@@ -34,13 +34,14 @@ and open the template in the editor.
                 <h2>Registrando Poblacion</h2>
             </div>
             <p align="center">Rellene la siguiente informacion del formulario para agregar un nuevo registro</p><br>
-            <form action="demo_form.asp" method="POST" th:action="@{/guardarC}" th:object="${citas}">
+            <form method="POST" th:action="@{/guardarC}" th:object="${citas}">
                 <div>
                     <label>Nombre:</label>
                     <select id="persona" name="persona" th:field="*{persona}">
-                        <option th:each="persona{persona}"
-                            th:value="${persona.id}"
-                            th:text="${persona.nombre}" />
+                        <option th:each="persona:${persona}"
+                                th:value="${persona.id}"
+                                th:text="${persona.nombre}"
+                                /> 
                     </select><br><br>
                 </div>
 
@@ -52,24 +53,26 @@ and open the template in the editor.
                 <div>
                     <label>Vacuna:</label>
                     <select id="vacuna" name="vacuna" th:field="*{vacuna}">
-                        <option th:each="vacuna{vacuna}"
-                            th:value="${vacuna.id}"
-                            th:text="${vacuna.nombreVacuna}" />
+                        <option th:each="vacuna:${vacuna}"
+                                th:value="${vacuna.id}"
+                                th:text="${vacuna.nombreVacuna}"
+                                /> 
                     </select><br><br>
-                </div>-->
+                </div>
 
                 <div>
                     <label>Establecimiento de Salud:</label>
                     <select id="establecimiento" name="establecimiento" th:field="*{establecimiento}">
-                        <option th:each="establecimiento:${listaEstab}"
-                            th:value="${establecimiento.codEstablecimiento}"
-                            th:text="${establecimiento.nombreEstablecimiento}" />
+                        <option th:each="establecimiento:${establecimiento}"
+                                th:value="${establecimiento.id}"
+                                th:text="${establecimiento.nombreEstablecimiento}"
+                                /> 
                     </select><br><br>
                 </div>
 
                 <div>
                     <label>Fecha:</label>
-                    <input type="date" id="fecha" name="fecha" th:field="*{fecha}"><br><br>
+                    <input type="text" id="fecha" name="fecha" th:field="*{fecha}"><br><br>
                 </div>
 
                 <br><br><button type="submit">Guardar Registro</button>

@@ -41,15 +41,13 @@ and open the template in the editor.
                             <th>Id</th>
                             <th>Nombre Establecimiento</th>
                             <th>Codigo de Establecimiento</th>
-                            <th>Departamento</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="establecimiento{lista}">
+                        <tr th:each="establecimiento:${lista}">
                             <td th:text="${establecimiento.id}"></td>
                             <td th:text="${establecimiento.nombreEstablecimiento}"></td>
                             <td th:text="${establecimiento.codigoEst}"></td>
-                            <td th:text="${establecimiento.depto}"></td>
                             <td>
                                 <a th:href="@{/actualizarEstablecimiento/{id}(id=${establecimiento.id})}"><img src="images/actualizar.png" alt=""></a>
                                 <a th:href="@{/eliminarEstablecimiento/{id}(id=${establecimiento.id})}"><img src="images/eliminar.png" alt=""></a>

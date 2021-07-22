@@ -33,7 +33,7 @@ public class EstablecimientoService {
         return repoEstablecimiento.findById(id);
     }
     
-    public List<Establecimiento> getLista(){
+    public List<Establecimiento> getListaEstab(){
         return (List<Establecimiento>) repoEstablecimiento.findAll();
     }
 }

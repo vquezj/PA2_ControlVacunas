@@ -32,8 +32,8 @@ and open the template in the editor.
         <div align="center" height="400px">
             <h1 align="center">Gestion de Poblacion</h1>
             <a href="/crearC" >Agregar</a>
-            <h2 th:if="${listaCitas.isEmpty()}" align="center">No hay registros</h2>
-            <div th:if="${!listaCitas.isEmpty()}" align="center" >
+            <h2 th:if="${lista.isEmpty()}" align="center">No hay registros</h2>
+            <div th:if="${!lista.isEmpty()}" align="center" >
                 <h2>Registros</h2>
                 <table border="1">
                     <thead>
@@ -48,7 +48,7 @@ and open the template in the editor.
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="citas{listaCitas}">
+                        <tr th:each="citas:${lista}">
                             <td th:text="${citas.id}"></td>
                             <td th:text="${citas.persona}"></td>
                             <td th:text="${citas.fecha}"></td>

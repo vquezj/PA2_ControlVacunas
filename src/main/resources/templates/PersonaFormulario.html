@@ -36,6 +36,9 @@ and open the template in the editor.
             <p align="center">Rellene la siguiente informacion del formulario para agregar un nuevo registro</p><br>
             <form action="#" method="POST" th:action="@{/guardarFormulario}" th:object="${persona}">
                 <div>
+                    <label>Id:</label>
+                    <input disabled  type="text" id="id" name="id" th:field="*{id}"><br><br>
+                    
                     <label>Ingrese El Numero de Identidad:</label>
                     <input type="text" id="ident" name="ident" th:field="*{ident}"><br><br>
 
@@ -43,10 +46,7 @@ and open the template in the editor.
                     <input type="text" id="nombre" name="nombre" th:field="*{nombre}"><br><br>
 
                     <label>Ingrese La Fecha De Nacimiento:</label>
-                    <input type="date" id="fechaNac" name="fechaNac" th:field="*{fechaNac}"><br><br>
-                    
-                    <label>Ingrese el Genero:</label>
-                    <input type="text" id="genero" name="genero" th:field="*{genero}"><br><br>-->
+                    <input type="tex" id="fechaNac" name="fechaNac" th:field="*{fechaNac}"><br><br>
 
                     <label>Ingrese Una Ocupacion:</label>
                     <input type="text" id="ocupacion" name="ocupacion" th:field="*{ocupacion}"><br><br>
@@ -57,20 +57,24 @@ and open the template in the editor.
                     <label>Ingrese Un Numero De Telefono:</label>
                     <input type="text" id="telefono" name="telefono" th:field="*{telefono}"><br><br>
 
-                    <label>Ingrese Un Establecimiento De Salud:</label>
+                    <label>Seleccione Establecimiento De Salud:</label>
                     <select id="establecimientoSalud" name="establecimientoSalud" th:field="*{establecimientoSalud}">
-                        <option th:each="establecimientoSalud:${lista}"
-                            th:text="${establecimientoSalud.nombreEstablecimiento}" />
+                        <option th:each="establecimiento:${establecimiento}"
+                                th:value="${establecimiento.id}"
+                                th:text="${establecimiento.nombreEstablecimiento}"
+                            /> 
                     </select><br><br>
 
                     <label>Vacuna Aplicada:</label>
                     <select id="nombreVacuna" name="nombreVacuna" th:field="*{nombreVacuna}">
-                        <option th:each="nombreVacuna{lista}"
-                            th:text="${nombreVacuna.nombreVacuna}" />
+                        <option th:each="vacuna:${vacuna}"
+                                th:value="${vacuna.id}"
+                                th:text="${vacuna.nombreVacuna}"
+                            /> 
                     </select><br><br>
                     
                     <label>Ingrese La Fecha De Primera Dosis</label>
-                    <input type="date" id="primeraDosis" name="primeraDosis" th:field="*{primeraDosis}"><br><br>
+                    <input type="text" id="primeraDosis" name="primeraDosis" th:field="*{primeraDosis}"><br><br>
 
                 </div>
 

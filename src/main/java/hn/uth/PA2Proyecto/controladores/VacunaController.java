@@ -7,6 +7,7 @@ package hn.uth.PA2Proyecto.controladores;
 
 import hn.uth.PA2Proyecto.modelos.Vacuna;
 import hn.uth.PA2Proyecto.servicios.VacunaService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,12 +23,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VacunaController {
     @Autowired
-    
     private VacunaService sVacuna;
     
     @RequestMapping("/vacuna")
     public String vacuna(Model model){
-        model.addAttribute("lista", sVacuna.getLista());
+        List<Vacuna> listVacuna = sVacuna.getLista();
+        model.addAttribute("listaV", listVacuna);
         return "/vacuna";
     }
     
@@ -46,12 +47,12 @@ public class VacunaController {
     @PostMapping("/guardarVacuna")
     public String guardarFormularioVacuna(Vacuna vacuna, Model model){
         sVacuna.guardar(vacuna);
-        return "/vacuna";
+        return "redirect:/vacuna";
     }
     
     @GetMapping("/eliminarV/{id}")
     public String eliminarRV(@PathVariable Long id, Model model){
         sVacuna.eliminar(id);
-        return "/vacuna";
+        return "redirect:/vacuna";
     }
 }

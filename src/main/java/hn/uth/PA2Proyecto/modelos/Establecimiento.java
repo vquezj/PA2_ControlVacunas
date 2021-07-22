@@ -26,5 +26,5 @@ public class Establecimiento {
     private Long id;
     private String nombreEstablecimiento;
     private String codigoEst;
-    private String depto;
+
 }

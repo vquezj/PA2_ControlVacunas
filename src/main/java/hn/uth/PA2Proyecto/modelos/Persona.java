@@ -1,6 +1,6 @@
 package hn.uth.PA2Proyecto.modelos;
 
-import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,13 +21,12 @@ public class Persona {
     private Long id;
     private String ident;
     private String nombre;
-    private LocalDate fechaNac;
-    private String genero;
+    private String fechaNac;
     private String ocupacion;
     private String direccion;
     private String telefono;
     private String establecimientoSalud;
-    private LocalDate primeraDosis;
-    private LocalDate segundaDosis;
+    private String primeraDosis;
+    private String segundaDosis;
     private String nombreVacuna;
 }

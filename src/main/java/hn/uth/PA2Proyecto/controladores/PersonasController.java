@@ -5,10 +5,13 @@
  */
 package hn.uth.PA2Proyecto.controladores;
 
+import hn.uth.PA2Proyecto.modelos.Establecimiento;
 import hn.uth.PA2Proyecto.modelos.Persona;
+import hn.uth.PA2Proyecto.modelos.Vacuna;
 import hn.uth.PA2Proyecto.servicios.EstablecimientoService;
 import hn.uth.PA2Proyecto.servicios.PersonasService;
 import hn.uth.PA2Proyecto.servicios.VacunaService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,10 +27,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PersonasController {
     @Autowired
-    
     private PersonasService servicio;
-    private VacunaService servVacuna;
+    
+    @Autowired
     private EstablecimientoService servEstablecimiento;
+    
+    @Autowired
+    private VacunaService servVacuna;
     
     @RequestMapping("/index")
     public String index(Model model){
@@ -37,9 +43,14 @@ public class PersonasController {
     
     @GetMapping("/crear")
     public String abrirFormularioCrearPersona(Model model){
+        
+        List<Establecimiento> listEstab = servEstablecimiento.getListaEstab();
+        List<Vacuna> listVacuna = servVacuna.getLista();
+        
         model.addAttribute("persona", new Persona());
-        model.addAttribute("vacuna", servVacuna.getLista());
-        model.addAttribute("establecimiento", servEstablecimiento.getLista());
+        model.addAttribute("establecimiento", listEstab);
+        model.addAttribute("vacuna", listVacuna);
+        
         return "personaFormulario";
     }
     

@@ -5,7 +5,6 @@
  */
 package hn.uth.PA2Proyecto.modelos;
 
-import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,5 +27,5 @@ public class Citas {
     private String persona;
     private String vacuna;
     private String establecimiento;
-    private LocalDate fecha;
+    private String fecha;
 }
