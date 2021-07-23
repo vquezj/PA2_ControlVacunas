@@ -5,10 +5,12 @@
  */
 package hn.uth.PA2Proyecto.controladores;
 
+import hn.uth.PA2Proyecto.modelos.Departamento;
 import hn.uth.PA2Proyecto.modelos.Establecimiento;
 import hn.uth.PA2Proyecto.modelos.Genero;
 import hn.uth.PA2Proyecto.modelos.Persona;
 import hn.uth.PA2Proyecto.modelos.Vacuna;
+import hn.uth.PA2Proyecto.servicios.DepartamentoService;
 import hn.uth.PA2Proyecto.servicios.EstablecimientoService;
 import hn.uth.PA2Proyecto.servicios.GeneroService;
 import hn.uth.PA2Proyecto.servicios.PersonasService;
@@ -40,6 +42,9 @@ public class PersonasController {
     @Autowired
     private GeneroService servGenero;
     
+    @Autowired
+    private DepartamentoService servDepto;
+    
     @RequestMapping("/index")
     public String index(Model model){
         model.addAttribute("lista", servicio.getLista());
@@ -52,11 +57,13 @@ public class PersonasController {
         List<Establecimiento> listEstab = servEstablecimiento.getListaEstab();
         List<Vacuna> listVacuna = servVacuna.getLista();
         List<Genero> listGenero = servGenero.getLista();
+        List<Departamento> listDepto = servDepto.getLista();
         
         model.addAttribute("persona", new Persona());
         model.addAttribute("establecimiento", listEstab);
         model.addAttribute("vacuna", listVacuna);
         model.addAttribute("genero", listGenero);
+        model.addAttribute("departamento", listDepto);
         
         return "personaFormulario";
     }

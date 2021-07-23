@@ -58,6 +58,14 @@ and open the template in the editor.
 
                     <label>Ingrese Una Ocupacion:</label>
                     <input type="text" id="ocupacion" name="ocupacion" th:field="*{ocupacion}"><br><br>
+                    
+                    <label>Seleccione El Departamento De Origen:</label>
+                    <select id="depto" name="depto" th:field="*{depto}">
+                        <option th:each="departamento:${departamento}"
+                                th:value="${departamento.id}"
+                                th:text="${departamento.depto}"
+                            /> 
+                    </select><br><br>
 
                     <label>Ingrese Una Direccion:</label>
                     <input type="text" id="direccion" name="direccion" th:field="*{direccion}"><br><br>

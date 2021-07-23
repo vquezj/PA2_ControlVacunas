@@ -24,6 +24,7 @@ public class Persona {
     private String fechaNac;
     private String genero;
     private String ocupacion;
+    private String depto;
     private String direccion;
     private String telefono;
     private String establecimientoSalud;
