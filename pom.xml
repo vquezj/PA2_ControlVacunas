@@ -40,7 +40,7 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
                 <!-- *** -->
-
+                
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -51,6 +51,18 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+	 <dependency>
+	  <groupId>javax.inject</groupId>
+	  <artifactId>javax.inject</artifactId>
+	  <version>1</version>
+	  <type>jar</type>
+	 </dependency>
+	 <dependency>
+	  <groupId>javax</groupId>
+	  <artifactId>javaee-api</artifactId>
+	  <version>8.0</version>
+	  <type>jar</type>
+	 </dependency>
 	</dependencies>
 
 	<build>

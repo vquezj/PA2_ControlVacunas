@@ -31,4 +31,5 @@ public class Persona {
     private String primeraDosis;
     private String segundaDosis;
     private String nombreVacuna;
+
 }
