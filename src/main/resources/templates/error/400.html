@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <title>UTH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilo.css}" >
+        <link rel="stylesheet" th:href="@{/css/estilobtn.css}" >
+    </head>
+    <body>
+        
+        <div id="cabecera">
+            <div id="logotipo">
+                <figure><img src="images/logo vacunas.png" width="270" height="10" alt="Logotipo"></figure>
+            </div>
+            <div id="titulo"><h1>Control de Vacunas COVID-19</h1></div>
+        </div>
+        
+        <div align="center" height="1600px">
+                <div align="center">
+                    <h3 class="panel-tittle text-danger" >
+                        <span th:text='${error}'></span> - <span th:text='${status}'></span>
+                    </h3>
+                </div>
+                <div align="center">
+                    <img th:src="@{/images/error.png}" width="260" height="260" alt="error">
+                    <br>
+                    <h4>Ha hecho una solicitud incorrecta!</h4>
+                    <br><br>
+                    <button onclick="goBack()">&laquo;Regresar</button><br><br><br><br>
+                </div>      
+        </div>
+        
+        <div margin-top="190px">
+            <footer>
+                <p>
+                    Derechos Reservados <span>Jessy y Joy Team</span>
+                </p>
+            </footer>
+        </div>
+        
+        <script>
+            function goBack(){
+                window.history.back();
+            }
+        </script>
+    </body>
+</html>

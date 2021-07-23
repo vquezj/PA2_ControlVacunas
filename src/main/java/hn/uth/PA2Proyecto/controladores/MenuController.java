@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MenuController {
     @Autowired
     
-    @RequestMapping("/")
+    /*@RequestMapping("/principal")
     public String principal(){
         return "principal";
-    }
+    }*/
     
     @RequestMapping("/abrirIndex")
     public String abrirIndex(){
